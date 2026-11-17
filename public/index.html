@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poké-Jukebox | PokéAPI + iTunes API</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <h1>Poké-Jukebox</h1>
+    <p>Consumo simultâneo: PokéAPI &amp; iTunes Search API</p>
+  </header>
+
+  <main class="container">
+    <section class="card busca-card">
+      <h2>1. Explorar APIs Públicas (GET)</h2>
+      <p class="descricao">Digite o nome ou número de um Pokémon para carregar seus status e buscar trilhas sonoras relacionadas.</p>
+      
+      <form id="form-busca" class="form-grupo">
+        <input 
+          type="text" 
+          id="input-pokemon" 
+          placeholder="Ex: pikachu, gengar, eevee ou 25" 
+          required 
+        />
+        <button type="submit" class="btn-primario">Buscar nas APIs</button>
+      </form>
+
+      <div id="status-carregamento" class="oculto">Consultando PokéAPI e iTunes API...</div>
+      <div id="mensagem-erro" class="erro oculto"></div>
+    </section>
+
+    <section id="resultados-simultaneos" class="grid-resultados oculto">
+      <article class="card pokemon-card">
+        <span class="badge">API 1: PokéAPI (REST GET)</span>
+        <div id="pokemon-conteudo"></div>
+      </article>
+
+      <article class="card musica-card">
+        <span class="badge">API 2: iTunes Search API (REST GET)</span>
+        <div id="musica-conteudo"></div>
+      </article>
+    </section>
+
+    <section class="card playlist-card">
+      <h2>2. Playlist do Treinador (CRUD REST)</h2>
+      <p class="descricao">Demonstração prática dos métodos POST, GET, PUT e DELETE integrando os dados retornados.</p>
+
+      <form id="form-salvar" class="form-vertical">
+        <input type="text" id="nota-treinador" placeholder="Adicione uma nota (ex: Música de batalha)" />
+        <button type="submit" id="btn-salvar-combinacao" class="btn-secundario" disabled>
+          Salvar Combinação Atual (POST)
+        </button>
+      </form>
+
+      <div id="lista-playlist" class="lista-itens"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

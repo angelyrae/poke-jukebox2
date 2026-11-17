@@ -1,0 +1,12 @@
+{
+  "name": "poke-jukebox",
+  "version": "1.0.0",
+  "description": "Aplicacao Web Mobile-First integrando PokeAPI e iTunes Search API com Node.js e Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
